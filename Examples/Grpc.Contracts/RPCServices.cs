@@ -29,7 +29,7 @@ public class RPCResponse<TResult>
 
 public abstract class RPCServices
 {
-    public RPCResponse<TResult> ProcessStuff<TResult>(Result<TResult> test)
+    public RPCResponse<TResult> ProcessResult<TResult>(Result<TResult> test)
     {
         if (test.IsSuccess)
         {
