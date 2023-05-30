@@ -13,12 +13,12 @@ public class HomeService : RPCServices, IHomeService
         if (request.Name.Equals("Mr", StringComparison.CurrentCultureIgnoreCase) && request.Title.Equals("Lord", StringComparison.CurrentCultureIgnoreCase))
         {
             var badResult = Result.Fail(new Error("Mr is too awesome").CausedBy("You not awesome"));
-            return ProcessStuff<TestClass>(badResult);
+            return ProcessResult<TestClass>(badResult);
         }
         //get result from other service
         var result = Result.Ok(new TestClass() { Description = request.Description, Name = request.Name, Title = request.Title});
   
-        return ProcessStuff(result);
+        return ProcessResult(result);
     }
 }
 
